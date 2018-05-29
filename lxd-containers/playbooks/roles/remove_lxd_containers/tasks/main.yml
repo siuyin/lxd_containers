@@ -1,0 +1,9 @@
+- name: Remove LXD Containers
+  connection: local
+  become: false
+  lxd_container:
+    name: "{{item}}"
+    state: absent
+    timeout: 600
+  with_items:
+    - "{{groups['containers']}}"

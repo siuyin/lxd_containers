@@ -1,0 +1,4 @@
+- hosts: localhost
+  connection: local
+  roles:
+    - remove_lxd_containers

@@ -1,0 +1,12 @@
+# For this playbook to work, python must be installed in the container(s).
+- hosts:
+  - containers
+  gather_facts: false
+  tasks:
+    - name: touch ubuntu junk.txt
+      file:
+        path: /home/ubuntu/junk.txt
+        owner: ubuntu
+        group: ubuntu
+        mode: 0666
+        state: touch
